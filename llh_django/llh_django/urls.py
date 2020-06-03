@@ -19,14 +19,17 @@ from myfirstapp import views
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
+    url(r'orm', views.orm),
     url(r'login', views.login),
     url(r'index', views.index),
-    url(r'orm', views.orm),
+    # 用户url
     url(r'detail-(?P<nid>\d+).html', views.detail),
     url(r'userDel-(?P<nid>\d+)', views.userDel),
     url(r'userEdit-(?P<nid>\d+)', views.userEdit),
     url(r'user_info', views.user_info),
+    # 用户组url
     url(r'user_group', views.user_group),
+    url(r'groupEdit-(?P<nid>\d+)', views.groupEdit),
 ]
 
 

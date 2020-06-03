@@ -45,11 +45,13 @@
     </div>
     <div class="content">
         <div>
+            <h3>添加用户</h3>
             <form action="/user_info" method="post">
+                <input type="text" name="id" style="display: none">
                 <input type="text" name="user" placeholder="请输入用户名">
                 <input type="password" name="pwd" placeholder="请输入密码">
                 <input type="text" name="email" placeholder="请输入邮箱">
-                <select name="user_group">
+                <select name="group_id">
                     {% for item in group_list %}
                         <option value="{{ item.uid }}">{{ item.caption }}</option>
                     {% endfor %}
@@ -60,14 +62,14 @@
         <div>
             <h3>用户列表</h3>
             <ul>
-            {% for user in user_list %}
-                <li>
-                    <a href="/detail-{{ user.id }}.html">{{ user.username }}</a> |
-                    <a href="/userDel-{{ user.id }}">删除</a>
-                    <a href="/userEdit-{{ user.id }}">编辑</a>
-                </li>
-            {% endfor %}
-        </ul>
+                {% for user in user_list %}
+                    <li>
+                        <a href="/detail-{{ user.id }}.html">{{ user.username }}</a> |
+                        <a href="/userDel-{{ user.id }}">删除</a>
+                        <a href="/userEdit-{{ user.id }}">编辑</a>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </body>

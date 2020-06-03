@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>用户组管理</title>
     <style>
         .manager{
             background-color: #dddddd;
@@ -44,16 +44,26 @@
         <a class="menu" href="/user_group">用户组管理</a>
     </div>
     <div class="content">
-        <center>
-            <h1>详细信息</h1>
-            <h6>用户id：{{ obj.id }}</h6>
-            <h6>用户名:{{ obj.username }}</h6>
-            <h6>密码:{{ obj.password }}</h6>
-            <h6>邮箱：{{ obj.email }}</h6>
-            <h6>用户组：{{ obj.user_group_id }}</h6>
-            <h6>用户级别：{{ obj.user_type_id }}</h6>
-        </center>
+        <div>
+            <h3>添加用户组</h3>
+            <form action="/user_group" method="post">
+                <input type="text" name="uid" style="display: none">
+                <input type="text" name="caption" placeholder="请输入用户组">
+                <input type="submit" value="添加">
+            </form>
+        </div>
+        <div>
+            <h3>用户组列表</h3>
+            <ul>
+                {% for group in group_list %}
+                    <li>
+                        <a href="/group_detail-{{ group.id }}.html">{{ group.caption }}</a> |
+                        <a href="/groupDel-{{ group.id }}">删除</a>
+                        <a href="/groupEdit-{{ group.id }}">编辑</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-
 </body>
 </html>

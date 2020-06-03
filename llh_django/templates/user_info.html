@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .manager{
+            background-color: #dddddd;
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            color: white;
+        }
+        .user-manager{
+            position: absolute;
+            width: 200px;
+            top: 40px;
+            left: 0;
+            bottom: 0;
+            background-color: brown;
+        }
+        body{
+            margin: 0;
+        }
+        .menu{
+            display: block;
+            padding: 5px;
+        }
+        .content{
+            position: absolute;
+            left: 200px;
+            right: 0;
+            bottom: 0;
+            top: 40px;
+            background-color: antiquewhite;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="manager">用户管理后台系统</div>
+    <div class="user-manager">
+        <a class="menu" href="/user_info">用户管理</a>
+        <a class="menu" href="/user_group">用户组管理</a>
+    </div>
+    <div class="content">
+        <div>
+            <form action="/user_info" method="post">
+                <input type="text" name="user" placeholder="请输入用户名">
+                <input type="password" name="pwd" placeholder="请输入密码">
+                <input type="text" name="email" placeholder="请输入邮箱">
+                <select name="user_group">
+                    {% for item in group_list %}
+                        <option value="{{ item.uid }}">{{ item.caption }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="添加">
+            </form>
+        </div>
+        <div>
+            <h3>用户列表</h3>
+            <ul>
+            {% for user in user_list %}
+                <li>
+                    <a href="/detail-{{ user.id }}.html">{{ user.username }}</a> |
+                    <a href="/userDel-{{ user.id }}">删除</a>
+                    <a href="/userEdit-{{ user.id }}">编辑</a>
+                </li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+</body>
+</html>

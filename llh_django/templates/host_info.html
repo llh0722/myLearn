@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主机信息</title>
+    <style>
+        .hide{
+            display: none;
+        }
+        .shade{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: antiquewhite;
+            opacity: 0.6;  <!-- 不透明度 -->
+            z-index: 9;
+        }
+        .add_modal{
+            position: fixed;
+            border: 1px solid red;
+            top: 100px;
+            left: 50%;
+            margin-left: -200px;
+            width: 300px;
+            height: 200px;
+            z-index: 10;
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="add">
+        <input type="button" value="添加">
+    </div>
+    <div class="shade hide"></div>
+    <div class="add_modal hide">
+        <form method="post" action="/host_info">
+            <div>
+                <input type="text" name="hostName" placeholder="请输入主机名">
+            </div>
+            <div>
+                <input type="text" name="ip" placeholder="请输入IP">
+            </div>
+            <div>
+                <input type="text" name="port" placeholder="请输入端口号">
+            </div>
+            <div>
+                <select name="bus_id" id="bid">
+                    {% for row in business %}
+                        <option value="{{ row.bid }}">{{ row.caption }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="确定">
+                <input id="cancel" type="button" value="取消">
+            </div>
+        </form>
+    </div>
+    <table border="1">
+        <caption>主机信息表(对象)</caption>
+        <thead>
+            <tr>
+                <td>序号</td>
+                <td>主机名称</td>
+                <td>IP地址</td>
+                <td>端口号</td>
+                <td>业务部门</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in host_obj %}
+                <tr hid="{{ row.id }}" bid="{{ row.bid_id  }}">
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ row.hostName }}</td>
+                    <td>{{ row.ip }}</td>
+                    <td>{{ row.port }}</td>
+                    <td>{{ row.bid.caption }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table border="1">
+        <caption>主机信息表(字典)</caption>
+        <thead>
+            <tr>
+                <td>主机名称</td>
+                <td>业务部门</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in host_dic %}
+                <tr hid="{{ row.id }}" bid="{{ row.bid_id  }}">
+                    <td>{{ row.hostName }}</td>
+                    <td>{{ row.bid__caption }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table border="1">
+        <caption>主机信息表(元组)</caption>
+        <thead>
+            <tr>
+                <td>主机名称</td>
+                <td>业务部门</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in host_list %}
+                <tr hid="{{ row.id }}" bid="{{ row.bid_id  }}">
+                    <td>{{ row.0 }}</td>
+                    <td>{{ row.1 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="/static/jquery.js"></script>
+    <script>
+        $(function () {
+            $('#add').click(function () {
+                $('.shade, .add_modal').removeClass('hide')
+            });
+            $('#cancel').click(function () {
+                $('.shade, .add_modal').addClass('hide')
+            })
+        });
+    </script>
+</body>
+</html>

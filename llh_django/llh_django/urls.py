@@ -31,6 +31,10 @@ urlpatterns = [
     url(r'user_group', views.user_group),
     url(r'groupEdit-(?P<nid>\d+)', views.groupEdit),
     url(r'groupDel-(?P<nid>\d+)', views.groupDel),
+
+    # Business urls
+    url(r'business_info$', views.business_info),
+    url(r'host_info$', views.host_info),
 ]
 
 

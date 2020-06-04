@@ -135,8 +135,6 @@ def groupDel(request, nid):
     models.UserGroup.objects.filter(uid=nid).delete()
     return redirect('/user_group')
 
-
-
 def orm(request):
     # 创建方法一
     # models.UserInfo.objects.create(username='alex', password=123)
@@ -184,5 +182,54 @@ def orm(request):
     )
 
     return HttpResponse('orm')
+
+# 展示业务部门信息
+def business_info(request):
+    # 获取单表数据的三种方式
+    # 对象
+    bus_obj = models.Business.objects.all()
+    # 字典
+    bus_dic = models.Business.objects.all().values('bid', 'caption')
+    # 元组
+    bus_list = models.Business.objects.all().values_list('bid', 'caption')
+    return render(request, 'business_info.html',
+                  {"bus_obj": bus_obj,
+                   "bus_dic": bus_dic,
+                   "bus_list": bus_list
+                   })
+
+# 展示主机信息及添加新的记录
+def host_info(request):
+    if request.method == 'GET':
+        # 对象
+        host_obj = models.HOST.objects.filter(id__gt=0)
+        # for row in host_obj:
+        #     print(row.hostName, row.bid.caption)
+        # 字典
+        host_dic = models.HOST.objects.all().values('hostName', "bid__caption")
+        # 元组
+        host_list = models.HOST.objects.all().values_list('hostName', "bid__caption")
+        business = models.Business.objects.all()
+        return render(request, 'host_info.html',
+                      {"host_obj": host_obj,
+                       "host_dic": host_dic,
+                       "host_list": host_list,
+                       "business": business
+                       })
+    elif request.method == "POST":
+        hostname = request.POST.get('hostName')
+        ip = request.POST.get('ip')
+        port = request.POST.get('port')
+        bid_id = request.POST.get('bus_id')
+        models.HOST.objects.create(
+            hostName=hostname,
+            ip=ip,
+            port=port,
+            bid_id=bid_id
+        )
+        return redirect('/host_info')
+    else:
+        return redirect('/host_info')
+
 
 

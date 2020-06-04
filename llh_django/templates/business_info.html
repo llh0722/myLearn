@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>business列表</title>
+</head>
+<body>
+    <h3>业务部门列表(对象)</h3>
+    <ul>
+        {% for row in bus_obj %}
+            <li>{{ row.bid }}-{{ row.caption }}-{{ row.code }}</li>
+        {% endfor %}
+    </ul>
+    <h3>业务部门列表(字典)</h3>
+    <ul>
+        {% for row in bus_dic %}
+            <li>{{ row.bid }}-{{ row.caption }}</li>
+        {% endfor %}
+    </ul>
+    <h3>业务部门列表(元组)</h3>
+    <ul>
+        {% for row in bus_list %}
+            <li>{{ row.0 }}-{{ row.1 }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -30,6 +30,7 @@ urlpatterns = [
     # 用户组url
     url(r'user_group', views.user_group),
     url(r'groupEdit-(?P<nid>\d+)', views.groupEdit),
+    url(r'groupDel-(?P<nid>\d+)', views.groupDel),
 ]
 
 

@@ -121,15 +121,19 @@ def groupEdit(request, nid):
         obj_group = models.UserGroup.objects.filter(uid=nid).first()
         return render(request, 'groupEdit.html', {"obj_group": obj_group})
     elif request.method == 'POST':
-        nid = request.POST.get('id')
+        uid = request.POST.get('uid')
         # print(uid)
-        cap = request.POST.get('caption')
-        models.UserGroup.objects.filter(id=nid).update(caption=cap)
+        cap = request.POST.get('cap')
+        # print(cap)
+        models.UserGroup.objects.filter(uid=uid).update(caption=cap)
         return redirect('/user_group')
     else:
         return redirect('/groupEdit')
 
 # 删除用户组
+def groupDel(request, nid):
+    models.UserGroup.objects.filter(uid=nid).delete()
+    return redirect('/user_group')
 
 
 

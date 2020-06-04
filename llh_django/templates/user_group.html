@@ -58,8 +58,8 @@
                 {% for group in group_list %}
                     <li>
                         <a href="/group_detail-{{ group.id }}.html">{{ group.caption }}</a> |
-                        <a href="/groupDel-{{ group.id }}">删除</a>
-                        <a href="/groupEdit-{{ group.id }}">编辑</a>
+                        <a href="/groupDel-{{ group.uid }}">删除</a>
+                        <a href="/groupEdit-{{ group.uid }}">编辑</a>
                     </li>
                 {% endfor %}
             </ul>

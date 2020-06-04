@@ -6,8 +6,8 @@
 </head>
 <body>
     <div>
-        <form method="post" action="/groupEdit-{{ obj_group.id }}">
-            <input style="display: none" type="text" name="id" value="{{ obj_group.id }}">
+        <form method="post" action="/groupEdit-{{ obj_group.uid }}">
+            <input style="display: none" type="text" name="uid" value="{{ obj_group.uid }}">
             <input type="text" name="cap" value="{{ obj_group.caption }}">
             <input type="submit" value="提交">
         </form>

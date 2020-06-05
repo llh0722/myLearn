@@ -36,6 +36,8 @@ urlpatterns = [
     url(r'business_info$', views.business_info),
     url(r'host_info$', views.host_info),
     url(r'ajax_test$', views.ajax_test),
+    url(r'app_host', views.app_host),
+
 ]
 
 

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a32f457-58d9-4fca-a2fb-25c95ce32147" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/app_host.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llh_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/llh_django/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myfirstapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myfirstapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myfirstapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myfirstapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/host_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/host_info.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,61 +45,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myfirstapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="255" column="32" selection-start-line="255" selection-start-column="32" selection-end-line="255" selection-end-column="32" />
-              <folding>
-                <element signature="e#196#723#0" />
-                <element signature="e#725#735#1" />
-                <element signature="e#778#1451#0" />
-                <element signature="e#1453#1632#1" />
-                <element signature="e#1669#1705#0" />
-                <element signature="e#1745#2056#0" />
-                <element signature="e#2096#2177#0" />
-                <element signature="e#2218#3179#0" />
-                <element signature="e#3181#3192#1" />
-                <element signature="e#3238#3614#0" />
-                <element signature="e#3657#4137#0" />
-                <element signature="e#4179#4263#0" />
-                <element signature="e#4289#5383#0" />
-                <element signature="e#5420#5530#0" />
-                <element signature="e#5889#6998#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/host_info.html">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="410">
-              <caret line="152" column="19" lean-forward="true" selection-start-line="152" selection-start-column="19" selection-end-line="152" selection-end-column="19" />
+              <caret line="272" column="34" selection-start-line="272" selection-start-column="34" selection-end-line="272" selection-end-column="34" />
               <folding>
-                <element signature="e#116#140#0#HTML" />
-                <element signature="e#169#193#0#HTML" />
-                <element signature="e#358#382#0#HTML" />
-                <element signature="e#707#731#0#HTML" />
-                <element signature="n#style#0;n#span#0;n#div#4;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#table#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#table#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#table#2;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#2736#2760#0#HTML" />
-                <element signature="e#2951#2983#0#HTML" />
+                <element signature="e#208#735#0" />
+                <element signature="e#737#747#1" />
+                <element signature="e#790#1463#0" />
+                <element signature="e#1465#1644#1" />
+                <element signature="e#1681#1717#0" />
+                <element signature="e#1757#2068#0" />
+                <element signature="e#2108#2189#0" />
+                <element signature="e#2230#3191#0" />
+                <element signature="e#3193#3204#1" />
+                <element signature="e#3250#3626#0" />
+                <element signature="e#3669#4149#0" />
+                <element signature="e#4191#4275#0" />
+                <element signature="e#4299#5393#0" />
+                <element signature="e#5438#5855#0" />
+                <element signature="e#5901#7010#0" />
+                <element signature="e#7049#7723#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/llh_django/urls.py">
+        <entry file="file://$PROJECT_DIR$/templates/app_host.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="37" column="38" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="38" />
+            <state relative-caret-position="330">
+              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
               <folding>
-                <element signature="e#0#633#1" />
-                <element signature="e#634#666#0" expanded="true" />
+                <element signature="e#119#157#0#HTML" />
+                <element signature="e#172#407#0#HTML" />
+                <element signature="e#426#698#0#HTML" />
+                <element signature="e#710#844#0#HTML" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#table#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -135,11 +121,13 @@
         <option value="$PROJECT_DIR$/templates/userEdit.html" />
         <option value="$PROJECT_DIR$/templates/groupEdit.html" />
         <option value="$PROJECT_DIR$/templates/user_group.html" />
-        <option value="$PROJECT_DIR$/myfirstapp/models.py" />
         <option value="$PROJECT_DIR$/templates/business_info.html" />
-        <option value="$PROJECT_DIR$/llh_django/urls.py" />
-        <option value="$PROJECT_DIR$/myfirstapp/views.py" />
         <option value="$PROJECT_DIR$/templates/host_info.html" />
+        <option value="$PROJECT_DIR$/myfirstapp/models.py" />
+        <option value="$PROJECT_DIR$/llh_django/urls.py" />
+        <option value="$PROJECT_DIR$/templates/app_rela_host.html" />
+        <option value="$PROJECT_DIR$/templates/app_host.html" />
+        <option value="$PROJECT_DIR$/myfirstapp/views.py" />
       </list>
     </option>
   </component>
@@ -166,6 +154,16 @@
               <item name="llh_django" type="b2602c69:ProjectViewProjectNode" />
               <item name="llh_django" type="462c0819:PsiDirectoryNode" />
               <item name="llh_django" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="llh_django" type="b2602c69:ProjectViewProjectNode" />
+              <item name="llh_django" type="462c0819:PsiDirectoryNode" />
+              <item name="myfirstapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="llh_django" type="b2602c69:ProjectViewProjectNode" />
+              <item name="llh_django" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -328,7 +326,7 @@
       <workItem from="1590724201724" duration="12339000" />
       <workItem from="1590979825104" duration="34634000" />
       <workItem from="1591155490455" duration="15025000" />
-      <workItem from="1591242604641" duration="16844000" />
+      <workItem from="1591242604641" duration="24209000" />
     </task>
     <task id="LOCAL-00001" summary="跨表查询，添加host，business">
       <created>1591262004721</created>
@@ -337,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591262004721</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ajax初用">
+      <created>1591329967211</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591329967211</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -349,13 +354,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78842000" />
+    <option name="totallyTimeSpent" value="86207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49861497" visible="true" weight="0.15885022" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49861497" visible="true" weight="0.15885022" />
       <window_info id="Structure" order="1" sideWeight="0.50138503" side_tool="true" weight="0.18835099" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -369,7 +374,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49924356" weight="0.3295082" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.61865795" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.53934425" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" weight="0.43606558" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.40327868" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -410,7 +415,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="跨表查询，添加host，business" />
-    <option name="LAST_COMMIT_MESSAGE" value="跨表查询，添加host，business" />
+    <MESSAGE value="ajax初用" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajax初用" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/llh_django$Test__myfirstapp.coverage" NAME="Test: myfirstapp Coverage Results" MODIFIED="1590735859559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -523,15 +529,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myfirstapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="36" column="65" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
+        <state relative-caret-position="164">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+          <folding>
+            <element signature="e#191#424#0" />
+            <element signature="e#469#1037#0" />
+            <element signature="e#1085#1239#0" />
+            <element signature="e#1279#1568#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/host_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2250">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/llh_django/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="37" column="38" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="38" />
+        <state relative-caret-position="314">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
           <folding>
             <element signature="e#0#633#1" />
             <element signature="e#634#666#0" expanded="true" />
@@ -539,45 +558,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myfirstapp/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/app_host.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="255" column="32" selection-start-line="255" selection-start-column="32" selection-end-line="255" selection-end-column="32" />
+        <state relative-caret-position="330">
+          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
           <folding>
-            <element signature="e#196#723#0" />
-            <element signature="e#725#735#1" />
-            <element signature="e#778#1451#0" />
-            <element signature="e#1453#1632#1" />
-            <element signature="e#1669#1705#0" />
-            <element signature="e#1745#2056#0" />
-            <element signature="e#2096#2177#0" />
-            <element signature="e#2218#3179#0" />
-            <element signature="e#3181#3192#1" />
-            <element signature="e#3238#3614#0" />
-            <element signature="e#3657#4137#0" />
-            <element signature="e#4179#4263#0" />
-            <element signature="e#4289#5383#0" />
-            <element signature="e#5420#5530#0" />
-            <element signature="e#5889#6998#0" />
+            <element signature="e#119#157#0#HTML" />
+            <element signature="e#172#407#0#HTML" />
+            <element signature="e#426#698#0#HTML" />
+            <element signature="e#710#844#0#HTML" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#table#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/host_info.html">
+    <entry file="file://$PROJECT_DIR$/myfirstapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
-          <caret line="152" column="19" lean-forward="true" selection-start-line="152" selection-start-column="19" selection-end-line="152" selection-end-column="19" />
+          <caret line="272" column="34" selection-start-line="272" selection-start-column="34" selection-end-line="272" selection-end-column="34" />
           <folding>
-            <element signature="e#116#140#0#HTML" />
-            <element signature="e#169#193#0#HTML" />
-            <element signature="e#358#382#0#HTML" />
-            <element signature="e#707#731#0#HTML" />
-            <element signature="n#style#0;n#span#0;n#div#4;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#table#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#table#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#table#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#2736#2760#0#HTML" />
-            <element signature="e#2951#2983#0#HTML" />
+            <element signature="e#208#735#0" />
+            <element signature="e#737#747#1" />
+            <element signature="e#790#1463#0" />
+            <element signature="e#1465#1644#1" />
+            <element signature="e#1681#1717#0" />
+            <element signature="e#1757#2068#0" />
+            <element signature="e#2108#2189#0" />
+            <element signature="e#2230#3191#0" />
+            <element signature="e#3193#3204#1" />
+            <element signature="e#3250#3626#0" />
+            <element signature="e#3669#4149#0" />
+            <element signature="e#4191#4275#0" />
+            <element signature="e#4299#5393#0" />
+            <element signature="e#5438#5855#0" />
+            <element signature="e#5901#7010#0" />
+            <element signature="e#7049#7723#0" />
           </folding>
         </state>
       </provider>

@@ -256,5 +256,21 @@ def ajax_test(request):
         ret["error_msg"] = "请求错误"
     return HttpResponse(json.dumps(ret))
 
+def app_host(request):
+    if request.method == "GET":
+        app_list = models.Application.objects.all()
+        host_list = models.HOST.objects.all()
+        return render(request, "app_host.html",
+                      {"app_list": app_list,
+                       "host_list": host_list
+                       })
+    elif request.method == "POST":
+        aname = request.POST.get("aid")
+        host_list = request.POST.get("host_list")
+        print(aname, host_list)
+        app_obj = models.Application.objects.create(aname=aname)
+        app_obj.relation.add(host_list)
+        return redirect("/app_host")
+
 
 

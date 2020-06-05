@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from myfirstapp import models
+import json
 # Create your views here.
 # 登录
 def login(request):
@@ -230,6 +231,30 @@ def host_info(request):
         return redirect('/host_info')
     else:
         return redirect('/host_info')
+
+# ajax测试
+def ajax_test(request):
+    ret = {"status": True, "error_msg": None, "data": None}
+    try:
+        host = request.POST.get("hostname")
+        ip = request.POST.get("ip")
+        port = request.POST.get("port")
+        bid = request.POST.get("bus_id")
+        print(host, ip, port, bid)
+        if host and len(host) > 5:
+            models.HOST.objects.create(
+                hostName=host,
+                ip=ip,
+                port=port,
+                bid_id=bid
+            )
+        else:
+            ret["status"] = False
+            ret["error_msg"] = "太短了"
+    except Exception as e:
+        ret["status"] = False
+        ret["error_msg"] = "请求错误"
+    return HttpResponse(json.dumps(ret))
 
 
 

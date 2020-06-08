@@ -300,6 +300,10 @@ def tpl1(request):
     user_list = [1, 2, 3, 4]
     return render(request, "tpl1.html", {"user_list": user_list})
 
+def tpl2(request):
+    name = "DFJDGKDGjsdkfskd"
+    return render(request, "tpl2.html", {"name": name})
+
 
 
 

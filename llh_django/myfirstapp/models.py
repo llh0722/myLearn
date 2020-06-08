@@ -29,3 +29,35 @@ class UserInfo(models.Model):
         (3, "普通用户"),
     )
     user_type_id = models.IntegerField(choices=user_type_choices, default=1)
+
+# business表
+class Business(models.Model):
+    bid = models.AutoField(primary_key=True)
+    caption = models.CharField(max_length=32)
+    code = models.CharField(max_length=32, null=True, default='SA')
+
+# host表
+class HOST(models.Model):
+    id = models.AutoField(primary_key=True)
+    hostName = models.CharField(max_length=32, db_index=True)
+    ip = models.GenericIPAddressField(protocol='ipv4', db_index=True)
+    port = models.IntegerField()
+    bid = models.ForeignKey(to='Business', to_field='bid', on_delete=models.CASCADE)
+
+# 应用程序表
+class Application(models.Model):
+    aname = models.CharField(max_length=32)
+    # host表和application表的关联表自动创建方法
+    relation = models.ManyToManyField("HOST")
+
+# host表和application表的关联表自定义创建方法
+'''
+class AppRelation(models.Model):
+    hid = models.ForeignKey(to="HOST", to_field="id", on_delete=models.CASCADE)
+    aid = models.ForeignKey(to="Application", to_field="id", on_delete=models.CASCADE)
+'''
+
+
+
+
+

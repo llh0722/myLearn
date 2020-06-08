@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="/static/CSS/commons.css" rel="stylesheet">
+    <style>
+        .header{
+            background-color: antiquewhite;
+            color: red;
+            height: 40px;
+        }
+    </style>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <div class="header">小小的管理</div>
+    {% block content %}{% endblock %}
+    <script src="/static/jquery.js"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>

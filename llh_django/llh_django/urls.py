@@ -31,6 +31,17 @@ urlpatterns = [
     url(r'user_group', views.user_group),
     url(r'groupEdit-(?P<nid>\d+)', views.groupEdit),
     url(r'groupDel-(?P<nid>\d+)', views.groupDel),
+
+    # Business urls
+    url(r'business_info$', views.business_info),
+    url(r'host_info$', views.host_info),
+    url(r'ajax_test$', views.ajax_test),
+    url(r'app_host', views.app_host),
+    url(r'app_host_ajax$', views.app_host_ajax),
+    url(r'app_del-(?P<nid>\d+)', views.app_del),
+
+    # 模板之继承
+    url(r'tpl1', views.tpl1),
 ]
 
 

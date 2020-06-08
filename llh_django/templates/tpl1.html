@@ -1,0 +1,26 @@
+{% extends "mater.html" %}
+
+{% block css %}
+    <style>
+
+    </style>
+{% endblock %}
+
+{% block title %}用户管理{% endblock %}
+
+{% block content %}
+    <div>
+        <h3>用户管理</h3>
+        <ul>
+            {% for user in user_list %}
+                <li>{{ user }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+
+    </script>
+{% endblock %}

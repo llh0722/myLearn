@@ -288,8 +288,29 @@ def app_host_ajax(request):
     except Exception as e:
         ret["status"] = False
         ret["error_msg"] = "请求错误"
-    return HttpResponse(json.dumps(ret))
+    return HttpResponse(json.dumps(ret), content_type='application/json')
 
 def app_del(request,nid):
     models.Application.objects.filter(id=nid).delete()
     return redirect("/app_host")
+
+
+# 模板之继承
+def tpl1(request):
+    user_list = [1, 2, 3, 4]
+    return render(request, "tpl1.html", {"user_list": user_list})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -39,6 +39,9 @@ urlpatterns = [
     url(r'app_host', views.app_host),
     url(r'app_host_ajax$', views.app_host_ajax),
     url(r'app_del-(?P<nid>\d+)', views.app_del),
+
+    # 模板之继承
+    url(r'tpl1', views.tpl1),
 ]
 
 

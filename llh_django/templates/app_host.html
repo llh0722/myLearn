@@ -42,20 +42,20 @@
     </div>
     <div class="shade hide"></div>
     <div class="add_modal hide">
-        <form method="post" action="/app_host" >
+        <form id="app_form" method="post" action="/app_host" >
             <div>
-                <input id="aname" type="text" name="aname" placeholder="请输入应用程序名">
+                <input id="a_name" type="text" name="a_name" placeholder="请输入应用程序名">
             </div>
             <div>
-                <select name="host_list" id="host_list" multiple>
+                <select name="host_list" id="host_list" multiple="multiple">
                     {% for host in host_list %}
                         <option value="{{ host.id }}">{{ host.hostName }}</option>
                     {% endfor %}
                 </select>
             </div>
             <div>
-                <input type="submit" value="确定">
-                <a id="ajax_submit" class="aj">ajax提交</a>
+                <!--<input type="submit" value="确定">-->
+                <input id="ajax_submit" type="button" value="ajax提交">
                 <input id="cancel" type="button" value="取消">
                 <span id="msg" style="color: red"></span>
             </div>
@@ -82,7 +82,8 @@
                         {% endfor %}
                     </td>
                     <td>
-                        <a>编辑</a> | <a>删除</a>
+                        <a>编辑</a>|
+                        <a href="/app_del-{{ app.id }}">删除</a>
                     </td>
                 </tr>
             {% endfor %}
@@ -96,6 +97,23 @@
             });
             $("#cancel").click(function () {
                 $(".shade, .add_modal").addClass("hide")
+            });
+            $("#ajax_submit").click(function () {
+                $.ajax({
+                   url: "/app_host_ajax" ,
+                    type: "POST",
+                    data: $("#app_form").serialize(),
+                    dataType: "JSON",
+                    traditional: true,
+                    success:function(app_obj){
+                       var obj = JSON.parse(app_obj)
+                       if(obj.status==302){
+                           location.href=obj.location
+                       }else {
+                           $("#msg").text(obj.error_msg)
+                       }
+                    },
+                });
             });
         });
     </script>

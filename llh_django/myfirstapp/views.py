@@ -265,12 +265,31 @@ def app_host(request):
                        "host_list": host_list
                        })
     elif request.method == "POST":
-        aname = request.POST.get("aid")
-        host_list = request.POST.get("host_list")
-        print(aname, host_list)
-        app_obj = models.Application.objects.create(aname=aname)
-        app_obj.relation.add(host_list)
+        a_name = request.POST.get("a_name")
+        host_list = request.POST.getlist("host_list")
+        print(a_name, host_list)
+        app_obj = models.Application.objects.create(aname=a_name)
+        app_obj.relation.add(*host_list)
         return redirect("/app_host")
 
 
+def app_host_ajax(request):
+    ret = {"status": True, "error_msg": None, "data": None}
+    try:
+        a_name = request.POST.get("a_name")
+        host_list = request.POST.getlist("host_list")
+        print(a_name, host_list, len(a_name))
+        if a_name and len(a_name) > 2:
+            app_obj = models.Application.objects.create(aname=a_name)
+            app_obj.relation.add(*host_list)
+        else:
+            ret["status"] = False
+            ret["error_msg"] = "太短了"
+    except Exception as e:
+        ret["status"] = False
+        ret["error_msg"] = "请求错误"
+    return HttpResponse(json.dumps(ret))
 
+def app_del(request,nid):
+    models.Application.objects.filter(id=nid).delete()
+    return redirect("/app_host")

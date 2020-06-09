@@ -1,3 +1,4 @@
+<!--extends继承，只能有一个-->
 {% extends "mater.html" %}
 
 {% block css %}
@@ -16,8 +17,14 @@
                 <li>{{ user }}</li>
             {% endfor %}
         </ul>
+        {% for user in user_list %}
+            <!--include导入，可以是多个-->
+            {% include "tag.html" %}
+        {% endfor %}
     </div>
 {% endblock %}
+
+
 
 {% block js %}
     <script>

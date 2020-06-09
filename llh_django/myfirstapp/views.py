@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.utils.safestring import mark_safe
+from untils import page
 
 from myfirstapp import models
 import json
@@ -315,70 +316,12 @@ def paging(request):
     # 获取当前页
     current_page = request.GET.get("page", 1)
     current_page = int(current_page)
-
-    # 每页十条
-    start = (current_page-1)*10
-    end = current_page*10
-    data = List[start:end]
-
-    page_num = 11
-
-    all_count = len(List)
-    count, y = divmod(all_count, 10)
-    if y:
-        count += 1
-    page_list = []
-
-    if count < page_num:
-        start_index = 1
-        end_index = count+1
-    else:
-        if current_page <= (page_num+1)/2:
-            start_index = 1
-            end_index = page_num+1
-        else:
-            start_index = current_page - (page_num-1)/2
-            end_index = current_page + (page_num+1)/2
-            if current_page+(page_num-1)/2 > count:
-                end_index = count+1
-                start_index = count-page_num+1
-
-    # 上一页
-    if current_page == 1:
-        prev = '<a class="page" href="javascript:void(0);">上一页</a>'
-    else:
-        prev = '<a class="page" href="/paging?page=%s">上一页</a>' % (current_page - 1)
-    page_list.append(prev)
-
-    for page in range(int(start_index), int(end_index)):
-        if page == current_page:
-            temp = '<a class="page active" href="/paging?page=%s">%s</a>' % (page, page)
-        else:
-            temp = '<a class="page" href="/paging?page=%s">%s</a>' % (page, page)
-        page_list.append(temp)
-
-    # 下一页
-    if current_page == count:
-        nex = '<a class="page" href="javascript:void(0);">下一页</a>'
-    else:
-        nex = '<a class="page" href="/paging?page=%s">下一页</a>' % (current_page + 1)
-    page_list.append(nex)
-
-    # 跳转
-    jump = """
-        <input type="text" /><a onclick='jumpTo(this, "/paging?page=");'>跳转</a>
-        <script>
-            function jumpTo(ths, base){
-                var val = ths.previousSibling.value;
-                location.href = base + val;
-            }
-        </script>
-    """
-    page_list.append(jump)
-
-    page_str = "".join(page_list)
-    page_str = mark_safe(page_str)
+    page_obj = page.Page(current_page, len(List))
+    data = List[page_obj.start:page_obj.end]
+    page_str = page_obj.page_str("/paging")
     return render(request, "paging.html", {"data": data, "page_str": page_str})
+
+
 
 
 

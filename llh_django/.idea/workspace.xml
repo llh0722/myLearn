@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a32f457-58d9-4fca-a2fb-25c95ce32147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/paging.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untils/page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llh_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/llh_django/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myfirstapp/templatetags/llh.py" beforeDir="false" afterPath="$PROJECT_DIR$/myfirstapp/templatetags/llh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myfirstapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myfirstapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,11 +44,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myfirstapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-400">
-              <caret line="343" column="46" lean-forward="true" selection-start-line="343" selection-start-column="46" selection-end-line="343" selection-end-column="46" />
+            <state relative-caret-position="376">
+              <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/untils/page.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-460">
+              <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -68,8 +79,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -108,6 +119,7 @@
         <option value="$PROJECT_DIR$/llh_django/urls.py" />
         <option value="$PROJECT_DIR$/templates/paging.html" />
         <option value="$PROJECT_DIR$/myfirstapp/views.py" />
+        <option value="$PROJECT_DIR$/untils/page.py" />
       </list>
     </option>
   </component>
@@ -133,17 +145,7 @@
             <path>
               <item name="llh_django" type="b2602c69:ProjectViewProjectNode" />
               <item name="llh_django" type="462c0819:PsiDirectoryNode" />
-              <item name="llh_django" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="llh_django" type="b2602c69:ProjectViewProjectNode" />
-              <item name="llh_django" type="462c0819:PsiDirectoryNode" />
-              <item name="myfirstapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="llh_django" type="b2602c69:ProjectViewProjectNode" />
-              <item name="llh_django" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="untils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -311,7 +313,8 @@
       <workItem from="1591672148647" duration="8577000" />
       <workItem from="1591689309164" duration="130000" />
       <workItem from="1591689480999" duration="91000" />
-      <workItem from="1591689635468" duration="686000" />
+      <workItem from="1591689635468" duration="1393000" />
+      <workItem from="1591696194565" duration="2909000" />
     </task>
     <task id="LOCAL-00001" summary="跨表查询，添加host，business">
       <created>1591262004721</created>
@@ -348,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591624648086</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="分页">
+      <created>1591690422926</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1591690422926</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -360,13 +370,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111477000" />
+    <option name="totallyTimeSpent" value="115093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49861497" visible="true" weight="0.17246597" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49861497" visible="true" weight="0.073373675" />
       <window_info id="Structure" order="1" sideWeight="0.50138503" side_tool="true" weight="0.18835099" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -380,7 +390,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49848714" weight="0.32840723" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.61865795" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.32840723" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" weight="0.41147542" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" weight="0.6885246" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.40327868" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -462,7 +472,8 @@
     <MESSAGE value="ajax初用" />
     <MESSAGE value="多对多查询，添加" />
     <MESSAGE value="模块之导入" />
-    <option name="LAST_COMMIT_MESSAGE" value="模块之导入" />
+    <MESSAGE value="分页" />
+    <option name="LAST_COMMIT_MESSAGE" value="分页" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/llh_django$Test__myfirstapp.coverage" NAME="Test: myfirstapp Coverage Results" MODIFIED="1590735859559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -649,17 +660,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myfirstapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <caret line="343" column="46" lean-forward="true" selection-start-line="343" selection-start-column="46" selection-end-line="343" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/paging.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myfirstapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untils/page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-460">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
         </state>
       </provider>
     </entry>

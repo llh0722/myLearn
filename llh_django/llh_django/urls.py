@@ -47,6 +47,10 @@ urlpatterns = [
 
     # 分页
     url(r'paging', views.paging),
+
+    # cookie
+    url(r'cookieLogin', views.cookieLogin),
+    url(r'cookieIndex', views.cookieIndex),
 ]
 
 

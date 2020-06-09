@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页管理</title>
+    <style>
+        .pagination .page{
+            background-color: aquamarine;
+            display: inline-block;
+            margin: 5px;
+            padding: 5px;
+        }
+        .pagination .page .active{
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            {% for item in data %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="pagination">
+        {{ page_str }}
+    </div>
+</body>
+</html>

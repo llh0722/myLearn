@@ -9,5 +9,5 @@ from django import template
 register=template.Library()
 
 @register.simple_tag
-def hello(a):
+def hello():
     return 123

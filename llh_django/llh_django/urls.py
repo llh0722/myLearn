@@ -44,6 +44,9 @@ urlpatterns = [
     url(r'tpl1', views.tpl1),
     # 自定义
     url(r'tpl2', views.tpl2),
+
+    # 分页
+    url(r'paging', views.paging),
 ]
 
 

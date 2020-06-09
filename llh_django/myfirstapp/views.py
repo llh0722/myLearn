@@ -318,7 +318,7 @@ def paging(request):
     current_page = int(current_page)
     page_obj = page.Page(current_page, len(List))
     data = List[page_obj.start:page_obj.end]
-    page_str = page_obj.page_str("/paging")
+    page_str = page_obj.page_str
     return render(request, "paging.html", {"data": data, "page_str": page_str})
 
 

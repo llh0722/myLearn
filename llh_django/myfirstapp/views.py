@@ -1,3 +1,4 @@
+# coding=utf-8
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
@@ -311,12 +312,14 @@ def tpl2(request):
 List = []
 for i in range(370):
     List.append(i)
-
 def paging(request):
     # 获取当前页
     current_page = request.GET.get("page", 1)
     current_page = int(current_page)
-    page_obj = page.Page(current_page, len(List))
+    val = request.COOKIES.get("per_page_count")
+    val = int(val)
+    # invalid literal for int() with base 10: '%5Bobject%20Object%5D'
+    page_obj = page.Page(current_page, len(List), val)
     data = List[page_obj.start:page_obj.end]
     page_str = page_obj.page_str
     return render(request, "paging.html", {"data": data, "page_str": page_str})
@@ -324,32 +327,32 @@ def paging(request):
 ############   cookie    #############
 # cookie是保存在客户端浏览器上的键值对
 login_info={
-    "素还真":{"password": "123123"},
-    "袁婉然":{"password": "0504"}
+    "素还真": {"password": "123123"},
+    "袁婉然": {"password": "0504"},
 }
 def cookieLogin(request):
-    if request.method=="GET":
+    if request.method == "GET":
         return render(request, "cookieLogin.html")
-    if request.method=="POST":
-        user=request.POST.get("username")
-        pwd=request.POST.get("password")
-        dic=login_info.get(user)
-        if dic==user:
+    if request.method == "POST":
+        user = request.POST.get("username")
+        pwd = request.POST.get("password")
+        dic = login_info.get(user)
+        print(dic)
+        if not dic:
             return render(request, "cookieLogin.html")
-        if dic["password"]==pwd:
-            res=redirect("/cookieIndex")
-            res.set_cookie("username",user)
+        if dic["password"] == pwd:
+            res = redirect("/cookieIndex")
+            res.set_cookie("username1", user)
             return res
         else:
             return render(request, "cookieLogin.html")
 
 def cookieIndex(request):
     # 获取当前登陆用户的cookie
-    val=request.COOKIES.get("username")
+    val = request.COOKIES.get("username1")
     if not val:
         return redirect("/cookieLogin")
-    return render(request, "cookieIndex.html", {"username":val})
-
+    return render(request, "cookieIndex.html", {"username": val})
 
 
 

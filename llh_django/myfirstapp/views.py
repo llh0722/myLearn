@@ -318,8 +318,38 @@ def paging(request):
     current_page = int(current_page)
     page_obj = page.Page(current_page, len(List))
     data = List[page_obj.start:page_obj.end]
-    page_str = page_obj.page_str("/paging")
+    page_str = page_obj.page_str
     return render(request, "paging.html", {"data": data, "page_str": page_str})
+
+############   cookie    #############
+# cookie是保存在客户端浏览器上的键值对
+login_info={
+    "素还真":{"password": "123123"},
+    "袁婉然":{"password": "0504"}
+}
+def cookieLogin(request):
+    if request.method=="GET":
+        return render(request, "cookieLogin.html")
+    if request.method=="POST":
+        user=request.POST.get("username")
+        pwd=request.POST.get("password")
+        dic=login_info.get(user)
+        if dic==user:
+            return render(request, "cookieLogin.html")
+        if dic["password"]==pwd:
+            res=redirect("/cookieIndex")
+            res.set_cookie("username",user)
+            return res
+        else:
+            return render(request, "cookieLogin.html")
+
+def cookieIndex(request):
+    # 获取当前登陆用户的cookie
+    val=request.COOKIES.get("username")
+    if not val:
+        return redirect("/cookieLogin")
+    return render(request, "cookieIndex.html", {"username":val})
+
 
 
 

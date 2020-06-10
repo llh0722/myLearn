@@ -29,7 +29,7 @@ class Page:
         return total_count
 
     @property
-    def page_str(self, base_url):
+    def page_str(self):
         page_list = []
         if self.total_count < self.page_num:
             start_index = 1
@@ -48,33 +48,33 @@ class Page:
         if self.current_page == 1:
             prev = '<a class="page" href="javascript:void(0);">上一页</a>'
         else:
-            prev = '<a class="page" href="%s?page=%s">上一页</a>' % (base_url, self.current_page - 1)
+            prev = '<a class="page" href="/paging?page=%s">上一页</a>' % (self.current_page - 1)
         page_list.append(prev)
 
         for page in range(int(start_index), int(end_index)):
             if page == self.current_page:
-                temp = '<a class="page active" href="%s?page=%s">%s</a>' % (base_url, page, page)
+                temp = '<a class="page active" href="/paging?page=%s">%s</a>' % (page, page)
             else:
-                temp = '<a class="page" href="%s?page=%s">%s</a>' % (base_url, page, page)
+                temp = '<a class="page" href="/paging?page=%s">%s</a>' % (page, page)
             page_list.append(temp)
 
         # 下一页
         if self.current_page == self.total_count:
             nex = '<a class="page" href="javascript:void(0);">下一页</a>'
         else:
-            nex = '<a class="page" href="%s?page=%s">下一页</a>' % (base_url, self.current_page + 1)
+            nex = '<a class="page" href="/paging?page=%s">下一页</a>' % (self.current_page + 1)
         page_list.append(nex)
 
         # 跳转
         jump = """
-                <input type="text" /><a onclick='jumpTo(this, "%s?page=");'>跳转</a>
+                <input type="text" /><a onclick='jumpTo(this, "/paging?page=");'>跳转</a>
                 <script>
                     function jumpTo(ths, base){
                         var val = ths.previousSibling.value;
                         location.href = base + val;
                     }
                 </script>
-            """ % (base_url,)
+            """
         page_list.append(jump)
         page_str = mark_safe("".join(page_list))
         return page_str
